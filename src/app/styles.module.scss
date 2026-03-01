@@ -1,0 +1,43 @@
+.pageContent {
+  margin-top: 70px;
+  padding-top: 10px;
+}
+
+.main {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  flex-direction: row-reverse;
+}
+
+.offers {
+  flex-grow: 1;
+  padding-bottom: 40px;
+  min-width: 0;
+}
+
+.offersLoader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+@media (max-width: 899px) {
+  .main {
+    flex-direction: column;
+    gap: 20px;
+    align-items: stretch;
+  }
+
+  .offers {
+    width: 100%;
+  }
+}
+
+@media (max-width: 599px) {
+  .pageContent {
+    margin-top: 60px;
+    padding-top: 5px;
+  }
+}

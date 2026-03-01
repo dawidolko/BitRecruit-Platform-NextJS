@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  line-height: 1;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #292524;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sort {
+  width: 200px;
+}
+
+@media (max-width: 599px) {
+  .header {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+
+  .headerRight {
+    justify-content: space-between;
+  }
+
+  .sort {
+    width: 100%;
+  }
+}

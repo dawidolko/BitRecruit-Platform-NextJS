@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 50" width="200" height="50">
+  <defs>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316"/>
+      <stop offset="100%" style="stop-color:#fbbf24"/>
+    </linearGradient>
+  </defs>
+  <rect x="2" y="10" width="30" height="30" rx="7" fill="url(#accent)"/>
+  <text x="9" y="32" font-family="monospace" font-weight="900" font-size="18" fill="#0c0a09">B</text>
+  <text x="40" y="34" font-family="'Inter', sans-serif" font-weight="700" font-size="22" fill="#fafaf9">Bit</text>
+  <text x="72" y="34" font-family="'Inter', sans-serif" font-weight="700" font-size="22" fill="url(#accent)">Recruit</text>
+</svg>

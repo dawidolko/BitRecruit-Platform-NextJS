@@ -1,0 +1,23 @@
+.offersGrid {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 14px;
+  grid-auto-rows: min-content;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.offersList {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 599px) {
+  .offersGrid {
+    grid-template-columns: 1fr;
+  }
+}

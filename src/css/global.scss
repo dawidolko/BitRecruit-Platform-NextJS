@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  background: #0c0a09;
+  font-family: var(--font-inter), sans-serif;
+  color: #e7e5e4;
+}
+
+ul,
+ol {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
