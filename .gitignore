@@ -46,3 +46,6 @@ next-env.d.ts
 
 # OS
 Thumbs.db
+
+# Machine-local Claude settings
+.claude/settings.local.json
