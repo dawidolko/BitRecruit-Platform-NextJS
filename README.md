@@ -6,10 +6,12 @@
 
 The project demonstrates a filterable, sortable and paginated job listing built on the Next.js App Router, with Zustand for state, React Query for data access and a dark emerald-cyan design, exported as a fully static site.
 
-[![Next.js](https://img.shields.io/badge/Next.js-13.5-black?logo=next.js)](https://nextjs.org)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://www.typescriptlang.org)
-[![Mantine](https://img.shields.io/badge/Mantine-7-blue?logo=mantine)](https://mantine.dev)
-[![License](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+![Next.js](https://img.shields.io/badge/Next.js-13.5-000000?logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
+![Mantine](https://img.shields.io/badge/Mantine-7-339AF0?logo=mantine&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3-06B6D4?logo=tailwindcss&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
