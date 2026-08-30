@@ -9,7 +9,7 @@ export default function Header() {
   return (
     <header className={s.header}>
       <nav className={`container-lg ${s.nav}`}>
-        <Link href={"#"} className={s.logoLink}>
+        <Link href="/" className={s.logoLink} aria-label="BitRecruit — home">
           <Image
             src="/logo.svg"
             alt=""
@@ -30,7 +30,7 @@ export default function Header() {
         <div className={s.navContent}>
           <ul className={s.list}>
             <li className={s.listItem}>
-              <Link href={"#"} className={s.listLink}>
+              <Link href="/" className={s.listLink}>
                 <span className={s.listLinkText}>Home</span>
               </Link>
             </li>

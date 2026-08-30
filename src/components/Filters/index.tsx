@@ -95,6 +95,12 @@ export default function Filters() {
 
   const applySalaryFilter = () => {
     setSalary({ from: salaryFrom, to: salaryTo });
+    /*
+       Applying from inside the dialog should also dismiss it: the point of
+       pressing Apply is to go back and look at the results, and leaving the
+       overlay up hid them behind it.
+    */
+    closeFilters();
   };
 
   const updateArray = <T,>(arr: T[], item: T) =>
