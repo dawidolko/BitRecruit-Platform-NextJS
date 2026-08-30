@@ -82,7 +82,9 @@ export default function Filters() {
 
   const [filtersOpened, { open: openFilters, close: closeFilters }] =
     useDisclosure(false);
-  const [categoriesOpened, { toggle: categoriesToggle }] = useDisclosure(false);
+  // Every filter group starts expanded. Categories used to default to closed,
+  // which read as an empty, broken section next to the populated groups below.
+  const [categoriesOpened, { toggle: categoriesToggle }] = useDisclosure(true);
   const [technologiesOpened, { toggle: technologiesToggle }] =
     useDisclosure(true);
   const [salaryOpened, { toggle: salaryToggle }] = useDisclosure(true);

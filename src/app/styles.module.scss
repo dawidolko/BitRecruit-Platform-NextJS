@@ -41,3 +41,8 @@
     padding-top: 5px;
   }
 }
+
+/* The main landmark wraps the whole page; it must not introduce its own box. */
+.pageMain {
+  display: contents;
+}

@@ -16,14 +16,26 @@ import s from "./styles.module.scss";
 
 export default function Page() {
   return (
-    <Suspense
-      fallback={
-        <div className={s.offersLoader}>
-          <Loader />
-        </div>
-      }>
-      <PageContent />
-    </Suspense>
+    /*
+      The landmark and the page heading sit outside <Suspense> on purpose. The
+      whole page is a client component, so anything inside the boundary is
+      replaced by the fallback in the prerendered HTML — a crawler (and a
+      screen reader before hydration) saw a spinner and no <main> or <h1> at
+      all. Keeping them here puts both in the static export.
+    */
+    <main id="main-content" tabIndex={-1} className={s.pageMain}>
+      <h1 className="visually-hidden">
+        BitRecruit — IT job offers for developers
+      </h1>
+      <Suspense
+        fallback={
+          <div className={s.offersLoader}>
+            <Loader />
+          </div>
+        }>
+        <PageContent />
+      </Suspense>
+    </main>
   );
 }
 
@@ -32,13 +44,13 @@ function PageContent() {
     <JobOffersProvider>
       <div className={`container-lg ${s.pageContent}`}>
         <Hero />
-        <main className={`${s.main}`}>
+        <div className={`${s.main}`}>
           <Filters />
           <div className={s.offers}>
             <JobOffersHeader />
             <JobOffersContent />
           </div>
-        </main>
+        </div>
       </div>
     </JobOffersProvider>
   );

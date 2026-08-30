@@ -42,10 +42,24 @@ export default function RootLayout({
           oenosRegular.variable,
           roboto_mono.variable,
         ].join(" ")}>
+        {/* First focusable element: lets keyboard and screen reader users jump
+            past the header navigation straight to the offer list. */}
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <ThemeRegistry>
           <QueryProvider>
             <Header />
             {children}
+            <footer className="site-footer">
+              <p>
+                BitRecruit — a demonstration IT job board. Built by{" "}
+                <a href="https://dawidolko.pl" rel="noopener noreferrer" target="_blank">
+                  Dawid Olko
+                </a>
+                .
+              </p>
+            </footer>
           </QueryProvider>
         </ThemeRegistry>
       </body>

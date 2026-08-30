@@ -25,3 +25,86 @@ ol {
 a {
   text-decoration: none;
 }
+
+/* -------------------------------------------------------------------------
+   Accessibility (WCAG 2.1 AA)
+   ------------------------------------------------------------------------- */
+
+/*
+  Skip link: hidden until it receives keyboard focus, then pinned to the top of
+  the viewport. Without it every keyboard user has to tab through the whole
+  header before reaching the offer list.
+*/
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 2000;
+  padding: 12px 20px;
+  border-radius: 0 0 8px 8px;
+  background-color: #16110d;
+  color: #ff8a3d;
+  font-weight: 600;
+  text-decoration: none;
+  border: 2px solid #ff8a3d;
+  transition: top 0.2s ease-in-out;
+
+  &:focus,
+  &:focus-visible {
+    top: 0;
+    outline: 3px solid #ff8a3d;
+    outline-offset: 2px;
+  }
+}
+
+/* The skip link moves focus here; it is a target, not a tab stop. */
+#main-content:focus {
+  outline: none;
+}
+
+.site-footer {
+  padding: 2.5rem 1rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.55);
+
+  a {
+    color: #ff8a3d;
+  }
+}
+
+/* A visible focus indicator on every interactive element. */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+[tabindex]:not([tabindex="-1"]):focus-visible {
+  outline: 3px solid #ff8a3d;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Visually hidden but available to assistive technology and to crawlers. */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
