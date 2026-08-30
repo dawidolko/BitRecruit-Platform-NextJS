@@ -3,13 +3,15 @@ import Image from "next/image";
 import { IconChevronDown } from "@tabler/icons-react";
 import { Button } from "@mantine/core";
 
+import HomeLink from "./HomeLink";
+
 import s from "./styles.module.scss";
 
 export default function Header() {
   return (
     <header className={s.header}>
       <nav className={`container-lg ${s.nav}`}>
-        <Link href="/" className={s.logoLink} aria-label="BitRecruit — home">
+        <HomeLink className={s.logoLink} ariaLabel="BitRecruit — home">
           <Image
             src="/logo.svg"
             alt=""
@@ -17,7 +19,7 @@ export default function Header() {
             height="50"
             className={s.logo}
           />
-        </Link>
+        </HomeLink>
 
         {/* Mobile burger - checkbox toggle */}
         <input type="checkbox" id="menuToggle" className={s.menuToggle} />
@@ -30,9 +32,9 @@ export default function Header() {
         <div className={s.navContent}>
           <ul className={s.list}>
             <li className={s.listItem}>
-              <Link href="/" className={s.listLink}>
+              <HomeLink className={s.listLink}>
                 <span className={s.listLinkText}>Home</span>
-              </Link>
+              </HomeLink>
             </li>
             <li className={s.listItem}>
               <div className={`${s.listLink} ${s.listLinkDropdown}`}>

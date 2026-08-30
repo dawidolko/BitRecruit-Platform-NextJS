@@ -10,6 +10,7 @@ import "@/css/app.scss";
 import "devicon/devicon.min.css";
 import Header from "@/components/Header";
 import QueryProvider from "@/providers/QueryProvider";
+import SkipLink from "@/components/SkipLink";
 
 export const metadata: Metadata = {
   // metadataBase lets Next resolve the relative URLs below into absolute ones,
@@ -85,9 +86,7 @@ export default function RootLayout({
             }),
           }}
         />
-        <a href="#main-content" className="skip-link">
-          Skip to main content
-        </a>
+        <SkipLink />
         <ThemeRegistry>
           <QueryProvider>
             <Header />

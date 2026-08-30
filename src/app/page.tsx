@@ -44,7 +44,12 @@ function PageContent() {
     <JobOffersProvider>
       <div className={`container-lg ${s.pageContent}`}>
         <Hero />
-        <div className={`${s.main}`}>
+        {/*
+          Cel skip-linka: pierwsza wlasciwa tresc pod banerem hero. Skok na
+          sam poczatek <main> ladowal wizualnie w okolicach naglowka, przez co
+          uzytkownik klawiatury nadal musial przewijac do ofert.
+        */}
+        <div id="main-start" tabIndex={-1} className={`${s.main}`}>
           <Filters />
           <div className={s.offers}>
             <JobOffersHeader />
