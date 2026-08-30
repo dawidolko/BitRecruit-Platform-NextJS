@@ -97,3 +97,8 @@
   gap: 8px;
   align-items: stretch;
 }
+
+/* The filter dialog reuses the sidebar groups; it only needs its own padding. */
+.modalContent {
+  padding: 4px 2px 8px;
+}

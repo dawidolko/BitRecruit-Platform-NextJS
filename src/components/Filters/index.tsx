@@ -124,8 +124,117 @@ export default function Filters() {
           backgroundOpacity: 0.55,
           blur: 3,
         }}
-        transitionProps={{ transition: "rotate-left" }}>
-        {/* Modal content */}
+        transitionProps={{ transition: "rotate-left" }}
+        title="All filters">
+        {/*
+          The dialog previously rendered nothing at all — "See all filters"
+          opened an empty box. It now mirrors the sidebar groups, which is what
+          the button promises and what the narrow layout depends on, since the
+          sidebar is hidden there.
+        */}
+        <Box className={s.modalContent}>
+          <section>
+            <h3 className={s.groupTitle}>Categories</h3>
+            <ScrollArea h={220} offsetScrollbars>
+              <Box className={s.groupList}>
+                {categoriesData.map((category: Category) => (
+                  <Checkbox
+                    key={category.id}
+                    label={category.label}
+                    value={category.name}
+                    checked={categories.includes(category.name)}
+                    onChange={() => updateCategories(category.name)}
+                  />
+                ))}
+              </Box>
+            </ScrollArea>
+          </section>
+
+          <Space h="md" />
+
+          <section>
+            <h3 className={s.groupTitle}>Technologies</h3>
+            <ScrollArea h={220} offsetScrollbars>
+              <Box className={s.groupList}>
+                {technologiesData.map((technology: Technology) => (
+                  <Checkbox
+                    key={technology.id}
+                    label={technology.label}
+                    value={technology.name}
+                    checked={technologies.includes(technology.name)}
+                    onChange={() => updateTechnologies(technology.name)}
+                  />
+                ))}
+              </Box>
+            </ScrollArea>
+          </section>
+
+          <Space h="md" />
+
+          <section>
+            <h3 className={s.groupTitle}>Seniority</h3>
+            <Box className={s.groupList}>
+              {seniorityOptions.map((option) => (
+                <Checkbox
+                  key={option.value}
+                  label={option.label}
+                  value={option.value}
+                  checked={seniorities.includes(option.value)}
+                  onChange={() => updateSeniorities(option.value)}
+                />
+              ))}
+            </Box>
+          </section>
+
+          <Space h="md" />
+
+          <section>
+            <h3 className={s.groupTitle}>Salary</h3>
+            <Group grow>
+              <Input.Wrapper label="From" size="xs">
+                <Input
+                  size="xs"
+                  value={salaryFrom}
+                  onChange={(event) =>
+                    setSalaryFrom(Number(event.currentTarget.value))
+                  }
+                />
+              </Input.Wrapper>
+              <Input.Wrapper label="To" size="xs">
+                <Input
+                  size="xs"
+                  value={salaryTo}
+                  onChange={(event) =>
+                    setSalaryTo(Number(event.currentTarget.value))
+                  }
+                />
+              </Input.Wrapper>
+            </Group>
+            <Space h="sm" />
+            <RangeSlider
+              value={[salaryFrom, salaryTo]}
+              onChange={(range) => {
+                setSalaryFrom(range[0]);
+                setSalaryTo(range[1]);
+              }}
+              min={0}
+              max={50000}
+            />
+            <Space h="sm" />
+            <Button onClick={applySalaryFilter}>Apply</Button>
+          </section>
+
+          <Space h="lg" />
+
+          <Group justify="space-between">
+            {hasFilters() && (
+              <Button color="gray" variant="outline" onClick={clearFilters}>
+                Clear all
+              </Button>
+            )}
+            <Button onClick={closeFilters}>Show results</Button>
+          </Group>
+        </Box>
       </Modal>
 
       <div className={s.panel}>
