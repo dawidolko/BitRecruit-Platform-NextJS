@@ -1,3 +1,7 @@
+<p align="center">
+  <a href="https://bitrecruit.dawidolko.pl/"><img src="docs/readme/banner.webp" alt="BitRecruit: web platform. IT Career Platform - a modern, fully frontend IT job board that runs without a backend" width="100%"></a>
+</p>
+
 # BitRecruit
 
 > 🚀 **IT Career Platform** - a modern, fully frontend IT job board that runs without a backend
@@ -12,6 +16,8 @@ The project demonstrates a filterable, sortable and paginated job listing built 
 ![Mantine](https://img.shields.io/badge/Mantine-7-339AF0?logo=mantine&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3-06B6D4?logo=tailwindcss&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green)
+
+**[Live site](https://bitrecruit.dawidolko.pl/)** · [Screenshots](#️-screenshots) · [Getting started](#-getting-started)
 
 ---
 
@@ -132,6 +138,12 @@ Copy [`.env.example`](.env.example) to `.env.local` if you want to point the ser
 
 ---
 
+## ♿ Accessibility
+
+An accessibility panel in the corner of every page changes text size, contrast, font and motion, and remembers the choice on the device. It sits on top of the markup and does not replace accessible markup.
+
+---
+
 ## 📁 Project Structure
 
 ```
@@ -171,12 +183,6 @@ The site is served from a custom domain configured through [`public/CNAME`](publ
 
 ---
 
-## 🌍 Live Demo
-
-The project is deployed and available at: **[https://bitrecruit.dawidolko.pl](https://bitrecruit.dawidolko.pl)**
-
----
-
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
@@ -185,7 +191,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## 👨‍💻 Author
 
-Created by **[Dawid Olko](https://github.com/dawidolko)**
+**Dawid Olko** · Fullstack / AI Developer
 
-- **Website** — [dawidolko.pl](https://dawidolko.pl/)
-- **LinkedIn** — [@dawidolko](https://www.linkedin.com/in/dawidolko/)
+[Portfolio](https://olkodawid.dawidolko.pl) · [CV](https://cv.dawidolko.pl) · [LinkedIn](https://www.linkedin.com/in/dawidolko/) · [GitHub](https://github.com/dawidolko)
