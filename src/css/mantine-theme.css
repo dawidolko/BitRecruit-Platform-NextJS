@@ -1,0 +1,16 @@
+/* The Mantine theme tokens, kept in a stylesheet because the provider would otherwise
+ * print them as a style element in <body>, which is invalid HTML. */
+:root{--mantine-font-family: 'Inter', 'Inter Fallback';--mantine-font-family-headings: 'Inter', 'Inter Fallback';--mantine-primary-color-filled: var(--mantine-color-main-filled);--mantine-primary-color-filled-hover: var(--mantine-color-main-filled-hover);--mantine-primary-color-light: var(--mantine-color-main-light);--mantine-primary-color-light-hover: var(--mantine-color-main-light-hover);--mantine-primary-color-light-color: var(--mantine-color-main-light-color);--mantine-color-main-0: #fff7ed;--mantine-color-main-1: #ffedd5;--mantine-color-main-2: #fed7aa;--mantine-color-main-3: #fdba74;--mantine-color-main-4: #fb923c;--mantine-color-main-5: #f97316;--mantine-color-main-6: #ea580c;--mantine-color-main-7: #c2410c;--mantine-color-main-8: #9a3412;--mantine-color-main-9: #7c2d12;}:root[data-mantine-color-scheme="dark"]{--mantine-color-anchor: #fb923c;--mantine-color-main-filled: #9a3412;--mantine-color-main-filled-hover: #7c2d12;--mantine-color-main-light: rgba(234, 88, 12, 0.15);--mantine-color-main-light-hover: rgba(234, 88, 12, 0.2);--mantine-color-main-light-color: #fdba74;--mantine-color-main-outline: #fb923c;--mantine-color-main-outline-hover: rgba(251, 146, 60, 0.05);}:root[data-mantine-color-scheme="light"]{--mantine-color-anchor: #ea580c;--mantine-color-main-filled: #ea580c;--mantine-color-main-filled-hover: #c2410c;--mantine-color-main-light: rgba(234, 88, 12, 0.1);--mantine-color-main-light-hover: rgba(234, 88, 12, 0.12);--mantine-color-main-light-color: #ea580c;--mantine-color-main-outline: #ea580c;--mantine-color-main-outline-hover: rgba(234, 88, 12, 0.05);}
+@media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
+:root {
+  --mantine-color-dark-0: #C1C2C5;
+  --mantine-color-dark-1: #A6A7AB;
+  --mantine-color-dark-2: #909296;
+  --mantine-color-dark-3: #5c5f66;
+  --mantine-color-dark-4: #373A40;
+  --mantine-color-dark-5: #2C2E33;
+  --mantine-color-dark-6: #25262b;
+  --mantine-color-dark-7: #1A1B1E;
+  --mantine-color-dark-8: #141517;
+  --mantine-color-dark-9: #101113;
+}

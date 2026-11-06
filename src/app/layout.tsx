@@ -6,6 +6,7 @@ import { ColorSchemeScript } from "@mantine/core";
 import { inter, oenosBold } from "./fonts";
 import ThemeRegistry from "@/providers/ThemeRegistry";
 
+import "@/css/mantine-theme.css";
 import "@/css/app.scss";
 import "@/css/devicon.scss";
 import Header from "@/components/Header";
