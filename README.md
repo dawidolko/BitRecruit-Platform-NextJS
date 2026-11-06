@@ -59,6 +59,14 @@ A dark-themed job board showing developer roles with filters, pagination, salary
 
 ---
 
+## 🎬 Demo
+
+<p align="center">
+  <img src="docs/readme/demo.webp" alt="BitRecruit: a short scroll through the live site" width="80%">
+</p>
+
+---
+
 ## 🛠️ Technology Stack
 
 ### Frontend
