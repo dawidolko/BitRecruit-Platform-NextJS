@@ -45,7 +45,7 @@ const viewOptions = [
     label: (
       <>
         <IconLayoutGrid size="12" />
-        <VisuallyHidden>Preview</VisuallyHidden>
+        <VisuallyHidden>Grid view</VisuallyHidden>
       </>
     ),
   },
@@ -54,7 +54,7 @@ const viewOptions = [
     label: (
       <>
         <IconLayoutList size="12" />
-        <VisuallyHidden>Code</VisuallyHidden>
+        <VisuallyHidden>List view</VisuallyHidden>
       </>
     ),
   },
@@ -66,7 +66,7 @@ export default function JobOffersHeader() {
   return (
     <header className={s.header}>
       <div className={s.headerLeft}>
-        <Select data={sortingOptions} placeholder="Sort by" clearable value={sort} onChange={setSort} />
+        <Select aria-label="Sort by" data={sortingOptions} placeholder="Sort by" clearable value={sort} onChange={setSort} />
       </div>
       <div className={s.headerRight}>
         <SegmentedControl value={employmentType} onChange={setEmploymentType} data={employmentOptions} />

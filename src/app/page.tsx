@@ -1,8 +1,5 @@
 "use client";
 
-import React, { Suspense } from "react";
-import { Loader } from "@mantine/core";
-
 import Hero from "@/components/Hero";
 import Filters from "@/components/Filters";
 import JobOffersPagination from "@/components/JobOffersPagination";
@@ -16,25 +13,8 @@ import s from "./styles.module.scss";
 
 export default function Page() {
   return (
-    /*
-      The landmark and the page heading sit outside <Suspense> on purpose. The
-      whole page is a client component, so anything inside the boundary is
-      replaced by the fallback in the prerendered HTML — a crawler (and a
-      screen reader before hydration) saw a spinner and no <main> or <h1> at
-      all. Keeping them here puts both in the static export.
-    */
     <main id="main-content" tabIndex={-1} className={s.pageMain}>
-      <h1 className="visually-hidden">
-        BitRecruit — IT job offers for developers
-      </h1>
-      <Suspense
-        fallback={
-          <div className={s.offersLoader}>
-            <Loader />
-          </div>
-        }>
-        <PageContent />
-      </Suspense>
+      <PageContent />
     </main>
   );
 }
@@ -83,7 +63,7 @@ function JobOffersContent() {
   if (!data || data.length === 0) {
     return (
       <div className={s.offersLoader}>
-        <p style={{ color: "#78716c" }}>
+        <p style={{ color: "#a8a29e" }}>
           No offers found matching your criteria.
         </p>
       </div>

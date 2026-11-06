@@ -218,6 +218,8 @@ export default function Filters() {
             </Group>
             <Space h="sm" />
             <RangeSlider
+              thumbFromLabel="Minimum salary"
+              thumbToLabel="Maximum salary"
               value={[salaryFrom, salaryTo]}
               onChange={(range) => {
                 setSalaryFrom(range[0]);
@@ -279,6 +281,7 @@ export default function Filters() {
                   color="red"
                   size="compact-xs"
                   variant="outline"
+                  aria-label="Clear categories filters"
                   onClick={() => clearFilter("categories")}>
                   <IconX size={14} />
                 </Button>
@@ -289,6 +292,7 @@ export default function Filters() {
                 size="compact-sm"
                 variant="transparent"
                 className={s.groupButton}
+                aria-label="Toggle categories filters"
                 onClick={categoriesToggle}>
                 <IconChevronUp
                   className={`${s.groupToggleIcon} ${categoriesOpened ? s.groupToggleIconOpened : ""}`}
@@ -323,6 +327,7 @@ export default function Filters() {
                   color="red"
                   size="compact-xs"
                   variant="outline"
+                  aria-label="Clear technologies filters"
                   onClick={() => clearFilter("technologies")}>
                   <IconX size={14} />
                 </Button>
@@ -333,6 +338,7 @@ export default function Filters() {
                 size="compact-sm"
                 variant="transparent"
                 className={s.groupButton}
+                aria-label="Toggle technologies filters"
                 onClick={technologiesToggle}>
                 <IconChevronUp
                   className={`${s.groupToggleIcon} ${technologiesOpened ? s.groupToggleIconOpened : ""}`}
@@ -367,6 +373,7 @@ export default function Filters() {
                   color="red"
                   size="compact-xs"
                   variant="outline"
+                  aria-label="Clear salary filters"
                   onClick={() => clearFilter("salary")}>
                   <IconX size={14} />
                 </Button>
@@ -377,6 +384,7 @@ export default function Filters() {
                 size="compact-sm"
                 variant="transparent"
                 className={s.groupButton}
+                aria-label="Toggle salary filters"
                 onClick={salaryToggle}>
                 <IconChevronUp
                   className={`${s.groupToggleIcon} ${salaryOpened ? s.groupToggleIconOpened : ""}`}
@@ -406,6 +414,8 @@ export default function Filters() {
               </Group>
               <Space h="sm" />
               <RangeSlider
+                thumbFromLabel="Minimum salary"
+                thumbToLabel="Maximum salary"
                 value={[salaryFrom, salaryTo]}
                 onChange={(range) => {
                   setSalaryFrom(range[0]);
@@ -428,6 +438,7 @@ export default function Filters() {
                   color="red"
                   size="compact-xs"
                   variant="outline"
+                  aria-label="Clear seniorities filters"
                   onClick={() => clearFilter("seniorities")}>
                   <IconX size={14} />
                 </Button>
@@ -438,6 +449,7 @@ export default function Filters() {
                 size="compact-sm"
                 variant="transparent"
                 className={s.groupButton}
+                aria-label="Toggle seniority filters"
                 onClick={seniorityToggle}>
                 <IconChevronUp
                   className={`${s.groupToggleIcon} ${seniorityOpened ? s.groupToggleIconOpened : ""}`}

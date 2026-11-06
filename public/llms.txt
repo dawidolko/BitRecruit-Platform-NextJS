@@ -1,0 +1,11 @@
+# BitRecruit
+
+> BitRecruit is a demonstration IT job board by Dawid Olko: developer roles filterable by technology, seniority and salary. It is a frontend-only static site built with Next.js and mock data, so the listings are not real vacancies.
+
+## Pages
+
+- [Job offers](https://bitrecruit.dawidolko.pl/): the offer list with filters, sorting and pagination
+
+## Author
+
+- [Dawid Olko](https://dawidolko.pl): Fullstack / AI Developer who built this site

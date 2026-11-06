@@ -1,7 +1,7 @@
 'use client';
 
-import { useContext, createContext, useReducer, useEffect } from 'react';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useContext, createContext, useReducer, useEffect, useRef } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 import queryString from 'query-string';
 
 export type SortTypes = 'created_at' | '-created_at' | 'salary' | '-salary';
@@ -48,15 +48,10 @@ interface JobOffersContextType extends SearchProps, LayoutProps {
 
 const JobOffersContext = createContext<JobOffersContextType | undefined>(undefined);
 
-const JobOffersProvider = ({ children }: { children: React.ReactNode }) => {
-  const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-  const parsedParams = queryString.parse(searchParams.toString(), { arrayFormat: 'bracket', parseNumbers: true });
+const searchStateFromQuery = (search: string): SearchProps => {
+  const parsedParams = queryString.parse(search, { arrayFormat: 'bracket', parseNumbers: true });
 
-  // Search reducer
-
-  const initialSearchState: SearchProps = {
+  return {
     page: Number(parsedParams['page']) || 1,
     sort: (parsedParams['sort'] as SortTypes) || null,
     filters: {
@@ -69,9 +64,26 @@ const JobOffersProvider = ({ children }: { children: React.ReactNode }) => {
       },
     },
   };
+};
+
+const JobOffersProvider = ({ children }: { children: React.ReactNode }) => {
+  const router = useRouter();
+  const pathname = usePathname();
+
+  /*
+   * The query string is read after hydration instead of through useSearchParams,
+   * which would drop the whole page to a client-only render in the static export
+   * and leave crawlers with no offers in the served HTML.
+   */
+  const queryRead = useRef(false);
+  const initialSearchState = searchStateFromQuery('');
+
+  // Search reducer
 
   const searchReducer = (state: SearchProps, action: any) => {
     switch (action.type) {
+      case 'SET_ALL':
+        return action.payload;
       case 'SET_PAGE':
         return { ...state, page: action.payload };
       case 'SET_SORT':
@@ -101,7 +113,7 @@ const JobOffersProvider = ({ children }: { children: React.ReactNode }) => {
 
   const updateUrl = () => {
     const queryParameters = {
-      ...((searchParams.has('page') || searchState.page != 1) && { page: searchState.page }),
+      ...((new URLSearchParams(window.location.search).has('page') || searchState.page != 1) && { page: searchState.page }),
       sort: searchState.sort,
       by_technology: searchState.filters.technologies,
       by_category: searchState.filters.categories,
@@ -122,6 +134,13 @@ const JobOffersProvider = ({ children }: { children: React.ReactNode }) => {
   };
 
   useEffect(() => {
+    if (!queryRead.current) {
+      queryRead.current = true;
+      if (window.location.search) {
+        searchDispatch({ type: 'SET_ALL', payload: searchStateFromQuery(window.location.search) });
+      }
+      return;
+    }
     updateUrl();
   }, [searchState]);
 

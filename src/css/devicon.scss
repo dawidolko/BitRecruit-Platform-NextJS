@@ -1,0 +1,97 @@
+/*
+ * The offer icons from the MIT-licensed devicon set, cut down to the glyphs this
+ * site uses. The full set ships a 480 KB font and 50 KB of CSS for 26 icons.
+ */
+@font-face {
+  font-family: "devicon";
+  src: url("../fonts/devicon-subset.woff2") format("woff2");
+  font-display: swap;
+}
+
+[class^="devicon-"],
+[class*=" devicon-"] {
+  font-family: "devicon";
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.devicon-amazonwebservices-plain::before {
+  content: "\e603";
+}
+.devicon-android-plain::before {
+  content: "\e60e";
+}
+.devicon-angularjs-plain::before {
+  content: "\e61d";
+}
+.devicon-apache-plain::before {
+  content: "\e629";
+}
+.devicon-apple-plain::before {
+  content: "\e622";
+}
+.devicon-azure-plain::before {
+  content: "\e907";
+}
+.devicon-c-plain::before {
+  content: "\e639";
+}
+.devicon-cplusplus-plain::before {
+  content: "\e635";
+}
+.devicon-csharp-plain::before {
+  content: "\e637";
+}
+.devicon-dotnetcore-plain::before {
+  content: "\e9af";
+}
+.devicon-elixir-plain::before {
+  content: "\e997";
+}
+.devicon-flutter-plain::before {
+  content: "\e975";
+}
+.devicon-go-plain::before {
+  content: "\e909";
+}
+.devicon-html5-plain::before {
+  content: "\e7f7";
+}
+.devicon-java-plain::before {
+  content: "\e842";
+}
+.devicon-javascript-plain::before {
+  content: "\e845";
+}
+.devicon-kotlin-plain::before {
+  content: "\e96f";
+}
+.devicon-php-plain::before {
+  content: "\eb71";
+}
+.devicon-postgresql-plain::before {
+  content: "\eb7d";
+}
+.devicon-python-plain::before {
+  content: "\eb89";
+}
+.devicon-rails-plain::before {
+  content: "\e9a0";
+}
+.devicon-react-plain::before {
+  content: "\e601";
+}
+.devicon-ruby-plain::before {
+  content: "\ebca";
+}
+.devicon-scala-plain::before {
+  content: "\e95b";
+}
+.devicon-typescript-plain::before {
+  content: "\e9fb";
+}
+.devicon-vuejs-plain::before {
+  content: "\e9f2";
+}

@@ -22,7 +22,7 @@ export default function Header() {
         </HomeLink>
 
         {/* Mobile burger - checkbox toggle */}
-        <input type="checkbox" id="menuToggle" className={s.menuToggle} />
+        <input type="checkbox" id="menuToggle" className={s.menuToggle} aria-label="Menu" />
         <label htmlFor="menuToggle" className={s.burger}>
           <span></span>
           <span></span>
@@ -232,11 +232,7 @@ export default function Header() {
                     <div className={s.dropdownGroup}>
                       <p className={s.dropdownLabel}>From the blog</p>
                       <Link href={"#"} className={s.blogPost}>
-                        <img
-                          src="https://picsum.photos/300/180"
-                          alt=""
-                          className={s.blogPostImage}
-                        />
+                        <span aria-hidden="true" className={s.blogPostImage} />
                         <h2 className={s.blogPostTitle}>
                           How AI is reshaping developer hiring in 2026
                         </h2>

@@ -186,9 +186,10 @@
 }
 
 .blogPostImage {
+  display: block;
   width: 100%;
   height: 120px;
-  object-fit: cover;
+  background: linear-gradient(135deg, #7c2d12, #ea580c 60%, #fdba74);
   margin-bottom: 10px;
   border-radius: 8px;
 }
@@ -201,7 +202,7 @@
 }
 
 .blogPostText {
-  color: #78716c;
+  color: #a8a29e;
   font-size: 12px;
 }
 
