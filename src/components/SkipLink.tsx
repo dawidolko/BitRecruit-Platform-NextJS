@@ -1,13 +1,13 @@
 "use client";
 
 /*
- * Skip link kierujacy do wlasciwej tresci strony.
+ * Skip link pointing to the actual page content.
  *
- * Domyslny skok pod #main-content ladowal na poczatku landmarku <main>,
- * czyli wizualnie w okolicach naglowka i banera hero — uzytkownik klawiatury
- * i tak musial przewijac dalej. Dlatego celem jest #main-start (pierwsza
- * tresc pod hero), a #main-content pozostaje bezpiecznym fallbackiem dla
- * podstron, ktore takiego znacznika nie definiuja.
+ * The default jump to #main-content landed at the start of the <main> landmark,
+ * which is visually around the header and hero banner - keyboard users still
+ * had to scroll further. So the target is #main-start (the first content below
+ * the hero), and #main-content remains a safe fallback for subpages that do not
+ * define that marker.
  */
 export default function SkipLink() {
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {

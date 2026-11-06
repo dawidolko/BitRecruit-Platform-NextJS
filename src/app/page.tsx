@@ -25,9 +25,9 @@ function PageContent() {
       <div className={`container-lg ${s.pageContent}`}>
         <Hero />
         {/*
-          Cel skip-linka: pierwsza wlasciwa tresc pod banerem hero. Skok na
-          sam poczatek <main> ladowal wizualnie w okolicach naglowka, przez co
-          uzytkownik klawiatury nadal musial przewijac do ofert.
+          Skip link target: the first real content below the hero banner. Jumping to
+          the very start of <main> landed visually around the header, so keyboard
+          users still had to scroll down to the offers.
         */}
         <div id="main-start" tabIndex={-1} className={`${s.main}`}>
           <Filters />

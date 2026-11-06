@@ -11,15 +11,15 @@ type HomeLinkProps = {
 };
 
 /*
- * Link do strony glownej, ktory zawsze konczy sie na jej gorze.
+ * Link to the home page that always lands at its top.
  *
- * Samo <Link href="/"> nie wystarcza w dwoch przypadkach:
- *  - gdy jestesmy juz na "/" (np. z parametrami filtrow w query string),
- *    Next.js nie wykonuje nawigacji, wiec strona zostaje tam, gdzie byla;
- *  - przywracanie pozycji scrolla przez przegladarke potrafi cofnac widok
- *    na dol strony tuz po przejsciu.
+ * A plain <Link href="/"> is not enough in two cases:
+ *  - when we are already on "/" (e.g. with filter params in the query string),
+ *    Next.js does not navigate, so the page stays where it was;
+ *  - the browser's scroll position restoration can move the view back down the
+ *    page right after the transition.
  *
- * Dlatego przy kliknieciu czyscimy query string i jawnie przewijamy na gore.
+ * So on click we clear the query string and explicitly scroll to the top.
  */
 export default function HomeLink({
   className,
@@ -31,8 +31,8 @@ export default function HomeLink({
 
   const handleClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     /*
-     * Nie przechwytujemy klikniec modyfikowanych ani srodkowym przyciskiem —
-     * uzytkownik chce wtedy otworzyc nowa karte.
+     * We do not intercept modified or middle-button clicks - the user wants to
+     * open a new tab in that case.
      */
     if (
       event.defaultPrevented ||
@@ -51,17 +51,16 @@ export default function HomeLink({
       router.push("/");
     } else {
       /*
-       * Usuwamy parametry filtrow bez dodawania wpisu do historii —
-       * cofniecie ma wrocic tam, gdzie uzytkownik byl wczesniej.
+       * Remove the filter params without adding a history entry - going back should
+       * return to where the user was before.
        */
       window.history.replaceState(null, "", "/");
     }
 
     /*
-     * Na tej stronie elementem przewijanym jest <body>, a nie
-     * documentElement — window.scrollTo() nie ma tu zadnego efektu.
-     * Przewijamy wiec kazdy z kandydatow; ten, ktory nie jest scrollerem,
-     * zignoruje wywolanie.
+     * On this page the scrolling element is <body>, not documentElement -
+     * window.scrollTo() has no effect here. So we scroll each candidate; the one
+     * that is not the scroller ignores the call.
      */
     const behavior = window.matchMedia("(prefers-reduced-motion: reduce)")
       .matches
