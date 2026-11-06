@@ -7,9 +7,9 @@ export const inter = Inter({
   variable: '--font-inter',
 });
 
-export const oenosBold = localFont({
-  src: '../fonts/oenos-bold.woff2',
-  variable: '--font-oenos-bold',
+export const figtreeBold = localFont({
+  src: '../fonts/figtree-700-latin.woff2',
+  variable: '--font-figtree-bold',
   display: 'swap',
   weight: '700',
 });

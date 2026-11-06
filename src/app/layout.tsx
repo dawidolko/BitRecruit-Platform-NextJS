@@ -3,7 +3,7 @@ import "@mantine/core/styles.css";
 import type { Metadata } from "next";
 import { ColorSchemeScript } from "@mantine/core";
 
-import { inter, oenosBold } from "./fonts";
+import { figtreeBold, inter } from "./fonts";
 import ThemeRegistry from "@/providers/ThemeRegistry";
 
 import "@/css/mantine-theme.css";
@@ -73,7 +73,7 @@ export default function RootLayout({
       <body
         className={[
           inter.variable,
-          oenosBold.variable,
+          figtreeBold.variable,
         ].join(" ")}>
         {/* First focusable element: lets keyboard and screen reader users jump
             past the header navigation straight to the offer list. */}

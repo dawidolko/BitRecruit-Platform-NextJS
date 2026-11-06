@@ -185,7 +185,7 @@ The site is served from a custom domain configured through [`public/CNAME`](publ
 
 ## 📄 License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE). Fonts and other third-party material keep their own licences, listed in [CREDITS.md](CREDITS.md).
 
 ---
 
